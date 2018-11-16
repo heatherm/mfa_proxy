@@ -42,3 +42,16 @@ LDAP uses uid lookup, example:
   LDAP: LDAP search yielded 1 matches
   LDAP: Authorizing user uid=riemann,dc=example,dc=com
 ```
+
+Encryption is turned off in the ldap config for the prototype:
+
+```
+ssl: OpenSSL::SSL::VERIFY_NONE
+```
+
+
+#### Current MFA implementation through Authy
+
+- On login, user will find a button to enable MFA
+- They must have the Authy app on their phone to validate the token for this app
+- When enabled, they will be asked to request an sms and verify the token sent from our app

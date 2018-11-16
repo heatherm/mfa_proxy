@@ -47,8 +47,11 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    authy (2.7.4)
+      httpclient (>= 2.5.3.3)
     autoprefixer-rails (9.3.1)
       execjs
+    awesome_print (1.8.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.3.2)
@@ -83,6 +86,9 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-authy (1.10.0)
+      authy (>= 2.7.2)
+      devise (>= 3.0.0)
     devise_ldap_authenticatable (0.8.6)
       devise (>= 3.4.1)
       net-ldap (>= 0.16.0)
@@ -91,6 +97,7 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    httpclient (2.8.3)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -215,12 +222,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  devise-authy
   devise_ldap_authenticatable
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)

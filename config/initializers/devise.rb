@@ -3,6 +3,14 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  # ==> Devise Authy Authentication Extension
+  # How long should the user's device be remembered for.
+  # config.authy_remember_device = 1.month
+
+  # Should Authy OneTouch be enabled?
+  # config.authy_enable_onetouch = false
+
   # ==> LDAP Configuration
   # config.ldap_logger = true
   config.ldap_create_user = true
@@ -53,6 +61,7 @@ Devise.setup do |config|
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
   config.authentication_keys = [:username]
+  # config.authy_enable_onetouch = true
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
