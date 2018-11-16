@@ -34,7 +34,7 @@ development:
   base: dc=example,dc=com
   admin_user: cn=read-only-admin,dc=example,dc=com
   admin_password: password
-  ssl: false
+  ssl: OpenSSL::SSL::VERIFY_NONE
   # <<: *AUTHORIZATIONS
 
 test:
@@ -44,7 +44,7 @@ test:
   base: dc=example,dc=com
   admin_user: cn=read-only-admin,dc=example,dc=com
   admin_password: password
-  ssl: simple_tls
+  ssl: OpenSSL::SSL::VERIFY_NONE
   # <<: *AUTHORIZATIONS
 
 production:
@@ -54,5 +54,5 @@ production:
   base: dc=example,dc=com
   admin_user: cn=read-only-admin,dc=example,dc=com
   admin_password: password
-  ssl: start_tls
+  ssl: OpenSSL::SSL::VERIFY_NONE
   # <<: *AUTHORIZATIONS

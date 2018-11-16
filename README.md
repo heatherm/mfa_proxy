@@ -6,7 +6,7 @@
 
 This uses a Sandbox ldap Server from [Forumsys](https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/).
 
-#####LDAP Server Information (read-only access):
+####LDAP Server Information (read-only access):
 
 Server: ldap.forumsys.com  
 Port: 389
