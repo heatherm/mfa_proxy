@@ -1,24 +1,44 @@
-# README
+# MFA PROXY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Prototype for Multi-factor Authentication for Infrastructure Appliances
 
-Things you may want to cover:
+## LDAP Server
 
-* Ruby version
+This uses a Sandbox ldap Server from [Forumsys](https://www.forumsys.com/tutorials/integration-how-to/ldap/online-ldap-test-server/).
 
-* System dependencies
+#####LDAP Server Information (read-only access):
 
-* Configuration
+Server: ldap.forumsys.com  
+Port: 389
 
-* Database creation
+Bind DN: cn=read-only-admin,dc=example,dc=com
+Bind Password: password
 
-* Database initialization
+All user passwords are password.
 
-* How to run the test suite
+You may also bind to individual Users (uid) or the two Groups (ou) that include:
 
-* Services (job queues, cache servers, search engines, etc.)
+ou=mathematicians,dc=example,dc=com
 
-* Deployment instructions
+- riemann
+- gauss
+- euler
+- euclid
 
-* ...
+ou=scientists,dc=example,dc=com
+- einstein
+- newton
+- galieleo
+- tesla
+
+
+#### Authentication backed by Devise with username enabled login for LDAP
+
+LDAP uses uid lookup, example:
+
+```
+  LDAP: LDAP dn lookup: uid=riemann
+  LDAP: LDAP search for login: uid=riemann
+  LDAP: LDAP search yielded 1 matches
+  LDAP: Authorizing user uid=riemann,dc=example,dc=com
+```

@@ -5,12 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Multi-factor Authentication for Infrastructure Appliances</title>
 
+
+
+
+
 </head>
 <body>
 <nav class="light-blue lighten-1" role="navigation">
   <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">WAHA</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="/users/sign_in">Login</a></li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to('Login', new_user_session_path)  %>
+        </li>
+      <% end %>
     </ul>
 
     <ul id="nav-mobile" class="sidenav">
